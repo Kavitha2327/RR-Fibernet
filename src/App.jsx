@@ -1,12 +1,12 @@
-import React from "react";
-import HomePage from "./HomePage";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <BrowserRouter>
+      {/* <AppRoutes /> */}
+      <Home />
+    </BrowserRouter>
   );
 }
 
