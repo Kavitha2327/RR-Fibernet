@@ -1,188 +1,367 @@
-import { Box, Typography, Grid, Button } from "@mui/material";
+// import { Box, Typography, Button } from "@mui/material";
+// import { motion } from "framer-motion";
+
+// const plans = [
+//   {
+//     tag: "POPULAR",
+//     title: "Superfast Internet + TV Combo",
+//     details: "20 Mbps • 250+ Channels • Free Installation",
+//     price: "₹499",
+//   },
+//   {
+//     tag: "INTERNET PLAN",
+//     title: "Unlimited Broadband",
+//     details: "30 Mbps • Unlimited Data • High Speed",
+//     price: "₹599",
+//   },
+//   {
+//     tag: "OTT PLAN",
+//     title: "Internet + OTT Pack",
+//     details: "30 Mbps • Hotstar • Zee5 • ETV Win",
+//     price: "₹499",
+//   },
+// ];
+
+// export default function Plans() {
+//   return (
+//     <Box
+//       sx={{
+//         py: 8,
+//         px: 3,
+//         background: "#F5F9FA",
+//       }}
+//     >
+//       {/* Title */}
+//       <Typography
+//         variant="h4"
+//         textAlign="center"
+//         fontWeight={700}
+//         mb={6}
+//         sx={{ color: "#1e293b" }}
+//       >
+//         Our Plans
+//       </Typography>
+
+//       {/* Plans */}
+//       <Box sx={{ maxWidth: "1000px", mx: "auto" }}>
+//         {plans.map((plan, i) => (
+//           <motion.div
+//             key={i}
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ delay: i * 0.15 }}
+//             viewport={{ once: true }}
+//           >
+//             <Box
+//               sx={{
+//                 mb: 3,
+//                 p: 3,
+//                 borderRadius: "18px",
+
+//                 background:
+//                   "linear-gradient(135deg, rgba(29,78,216,0.85), rgba(42,127,127,0.85))",
+
+//                 color: "white",
+
+//                 display: "flex",
+//                 flexDirection: { xs: "column", md: "row" },
+//                 alignItems: "center",
+//                 justifyContent: "space-between",
+//                 gap: 2,
+
+//                 backdropFilter: "blur(6px)",
+//                 boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+
+//                 transition: "0.3s",
+
+//                 "&:hover": {
+//                   transform: "translateY(-4px)",
+//                 },
+//               }}
+//             >
+//               {/* 🧠 Left */}
+//               <Box>
+//                 <Typography
+//                   sx={{
+//                     fontSize: "12px",
+//                     opacity: 0.75,
+//                     mb: 0.5,
+//                     letterSpacing: "0.5px",
+//                   }}
+//                 >
+//                   {plan.tag}
+//                 </Typography>
+
+//                 <Typography
+//                   sx={{
+//                     fontSize: "18px",
+//                     fontWeight: 600,
+//                   }}
+//                 >
+//                   {plan.title}
+//                 </Typography>
+
+//                 <Typography
+//                   sx={{
+//                     mt: 0.5,
+//                     fontSize: "13px",
+//                     opacity: 0.85,
+//                   }}
+//                 >
+//                   {plan.details}
+//                 </Typography>
+//               </Box>
+
+//               {/* 💰 Price */}
+//               <Box textAlign="center">
+//                 <Typography
+//                   sx={{
+//                     fontSize: "22px",
+//                     fontWeight: 700,
+//                   }}
+//                 >
+//                   {plan.price}
+//                 </Typography>
+//                 <Typography
+//                   sx={{
+//                     fontSize: "12px",
+//                     opacity: 0.7,
+//                   }}
+//                 >
+//                   /month
+//                 </Typography>
+//               </Box>
+
+//               {/* 🚀 Button */}
+//               <Button
+//                 variant="contained"
+//                 sx={{
+//                   background: "rgba(255,255,255,0.9)",
+//                   color: "#1e293b",
+//                   borderRadius: "999px",
+//                   px: 3,
+//                   fontWeight: 600,
+//                   textTransform: "none",
+//                   boxShadow: "none",
+
+//                   "&:hover": {
+//                     background: "white",
+//                   },
+//                 }}
+//               >
+//                 Get Connection
+//               </Button>
+//             </Box>
+//           </motion.div>
+//         ))}
+//       </Box>
+
+//       {/* Bottom note */}
+//       <Typography
+//         textAlign="center"
+//         sx={{
+//           mt: 4,
+//           fontSize: "14px",
+//           color: "#475569",
+//         }}
+//       >
+//         Free Installation • Free Set-top Box • 24/7 Support
+//       </Typography>
+//     </Box>
+//   );
+// }
+
+import { Box, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
 const plans = [
   {
-    title: "Basic",
-    speed: "50 Mbps",
+    tag: "POPULAR",
+    title: "Superfast Internet + TV Combo",
+    details: "20 Mbps • 250+ Channels • Free Installation",
     price: "₹499",
   },
   {
-    title: "Standard",
-    speed: "100 Mbps",
-    price: "₹799",
-    featured: true,
+    tag: "INTERNET",
+    title: "Unlimited Broadband",
+    details: "30 Mbps • Unlimited Data • High Speed",
+    price: "₹599",
   },
   {
-    title: "Premium",
-    speed: "200 Mbps",
-    price: "₹1199",
+    tag: "OTT",
+    title: "Internet + OTT Pack",
+    details: "30 Mbps • Hotstar • Zee5 • ETV Win",
+    price: "₹499",
   },
 ];
 
 export default function Plans() {
   return (
-    <Box
-      sx={{
-        py: 10,
-        px: 3,
-        position: "relative",
-        background: "linear-gradient(180deg, #F5F9FA, #E6F4F1)",
-        overflow: "hidden",
-      }}
-    >
-      {/* 🌊 Soft Teal Glow */}
-      <Box
-        sx={{
-          position: "absolute",
-          width: "350px",
-          height: "350px",
-          background: "radial-gradient(circle, #2A7F7F, transparent)",
-          top: "10%",
-          left: "5%",
-          filter: "blur(100px)",
-          opacity: 0.2,
-        }}
-      />
-
-      {/* 🔵 Blue Glow */}
-      <Box
-        sx={{
-          position: "absolute",
-          width: "300px",
-          height: "300px",
-          background: "radial-gradient(circle, #1D4ED8, transparent)",
-          bottom: "10%",
-          right: "5%",
-          filter: "blur(100px)",
-          opacity: 0.15,
-        }}
-      />
-
-      {/* ✨ Section Animation Wrapper */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+    <Box sx={{ py: 8, px: 3, background: "#F5F9FA" }}>
+      {/* Title */}
+      <Typography
+        variant="h4"
+        textAlign="center"
+        fontWeight={700}
+        mb={6}
+        sx={{ color: "#1e293b", letterSpacing: "-0.5px" }}
       >
-        {/* 🧠 Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Typography
-            variant="h4"
-            textAlign="center"
-            fontWeight={700}
-            mb={6}
-            sx={{ color: "#1e293b" }}
+        Our Plans
+      </Typography>
+
+      <Box sx={{ maxWidth: "950px", mx: "auto" }}>
+        {plans.map((plan, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.12 }}
+            viewport={{ once: true }}
           >
-            Choose Your Plan
-          </Typography>
-        </motion.div>
+            <Box
+              sx={{
+                mb: 3,
+                p: 3,
+                borderRadius: "18px",
+                position: "relative",
+                overflow: "hidden",
 
-        {/* 🎯 Stagger Cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-        >
-          <Grid container spacing={4} justifyContent="center">
-            {plans.map((plan, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 60 },
-                    visible: { opacity: 1, y: 0 },
+                // 🎯 layered gradient (premium feel)
+                background: `
+                  linear-gradient(135deg, rgba(29,78,216,0.75), rgba(42,127,127,0.75)),
+                  linear-gradient(135deg, #1D4ED8, #2A7F7F)
+                `,
+
+                color: "white",
+
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 2,
+
+                // ✨ glass + inner border
+                backdropFilter: "blur(8px)",
+                border: "1px solid rgba(255,255,255,0.15)",
+
+                // 💎 refined shadow
+                boxShadow: "0 8px 25px rgba(0,0,0,0.06)",
+
+                transition: "all 0.3s ease",
+
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "0 12px 35px rgba(0,0,0,0.08)",
+                },
+              }}
+            >
+              {/* subtle shine layer */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent)",
+                  opacity: 0.4,
+                  pointerEvents: "none",
+                }}
+              />
+
+              {/* 🧠 Left */}
+              <Box>
+                <Typography
+                  sx={{
+                    fontSize: "11px",
+                    opacity: 0.7,
+                    letterSpacing: "1px",
+                    mb: 0.5,
                   }}
-                  transition={{ duration: 0.6 }}
-                  whileHover={{ scale: 1.05 }}
                 >
-                  <Box
-                    sx={{
-                      position: "relative",
-                      p: 4,
-                      borderRadius: "20px",
-                      textAlign: "center",
-                      background: "rgba(255,255,255,0.65)",
-                      backdropFilter: "blur(12px)",
-                      border: plan.featured
-                        ? "1px solid rgba(29,78,216,0.3)"
-                        : "1px solid rgba(0,0,0,0.05)",
-                      boxShadow: plan.featured
-                        ? "0 10px 40px rgba(29,78,216,0.15)"
-                        : "0 10px 30px rgba(0,0,0,0.08)",
-                      transition: "0.3s",
-                    }}
-                  >
-                    {/* 🌟 Featured Tag */}
-                    {plan.featured && (
-                      <Typography
-                        sx={{
-                          position: "absolute",
-                          top: 16,
-                          right: 16,
-                          fontSize: "12px",
-                          px: 1.5,
-                          py: 0.5,
-                          borderRadius: "999px",
-                          background: "#1D4ED8",
-                          color: "white",
-                        }}
-                      >
-                        Popular
-                      </Typography>
-                    )}
+                  {plan.tag}
+                </Typography>
 
-                    <Typography
-                      variant="h5"
-                      fontWeight={600}
-                      sx={{ color: "#1e293b" }}
-                    >
-                      {plan.title}
-                    </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    letterSpacing: "-0.2px",
+                  }}
+                >
+                  {plan.title}
+                </Typography>
 
-                    <Typography
-                      variant="h3"
-                      sx={{ mt: 2, fontWeight: 700, color: "#1e293b" }}
-                    >
-                      {plan.price}
-                    </Typography>
+                <Typography
+                  sx={{
+                    mt: 0.5,
+                    fontSize: "13px",
+                    opacity: 0.85,
+                  }}
+                >
+                  {plan.details}
+                </Typography>
+              </Box>
 
-                    <Typography sx={{ mt: 1, color: "#64748b" }}>
-                      {plan.speed}
-                    </Typography>
+              {/* 💰 Price */}
+              <Box textAlign="center">
+                <Typography
+                  sx={{
+                    fontSize: "22px",
+                    fontWeight: 700,
+                    letterSpacing: "0.3px",
+                  }}
+                >
+                  {plan.price}
+                </Typography>
 
-                    <Button
-                      variant="contained"
-                      sx={{
-                        mt: 4,
-                        px: 4,
-                        borderRadius: "999px",
-                        background: "linear-gradient(90deg, #2A7F7F, #1D4ED8)",
-                        boxShadow: "0 8px 25px rgba(42,127,127,0.3)",
-                      }}
-                    >
-                      Get Started
-                    </Button>
-                  </Box>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </motion.div>
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    opacity: 0.6,
+                  }}
+                >
+                  /month
+                </Typography>
+              </Box>
+
+              {/* 🚀 Button */}
+              <Button
+                sx={{
+                  px: 3,
+                  py: 1,
+                  borderRadius: "999px",
+                  fontWeight: 600,
+                  fontSize: "13px",
+                  textTransform: "none",
+
+                  background: "rgba(255,255,255,0.9)",
+                  color: "#1e293b",
+
+                  backdropFilter: "blur(4px)",
+                  border: "1px solid rgba(255,255,255,0.4)",
+
+                  "&:hover": {
+                    background: "white",
+                  },
+                }}
+              >
+                Get Connection
+              </Button>
+            </Box>
+          </motion.div>
+        ))}
+      </Box>
+
+      {/* bottom note */}
+      <Typography
+        textAlign="center"
+        sx={{
+          mt: 4,
+          fontSize: "13px",
+          color: "#64748b",
+        }}
+      >
+        Free Installation • Free Set-top Box • 24/7 Support
+      </Typography>
     </Box>
   );
 }
